@@ -1,0 +1,21 @@
+<h1>Mi ToDo List</h1>
+<h3><%= notice %></h3>
+<ul>
+	<% @todo.each do |todo| %>
+		<li class="card" style="width: 18rem;">
+			<div class="card-body">
+				<p><%= link_to 'Editar', edit_todo_path(todo) %></p>
+				<p class="card-text"><%= todo.description %></p>
+				<p><%= link_to todo.id, todo_path(todo) %></p>
+				<p><%= link_to 'Eliminar', destroy_todo_path(todo), method: :delete %></p>
+				
+				<%= link_to 'Completado', completed_todo_path(todo), class: 'btn btn-primary' %>
+			</div>
+		</li>
+	<% end %>
+
+</ul>
+
+<%= link_to 'Crear Todo', todos_new_path  %>
+<%= link_to 'Listas', list_todos_path %>
+

@@ -1,0 +1,10 @@
+<h1>Editar Todo <%= @todo.id %></h1>
+
+
+<%= form_with(model: @todo, local: true) do |form| %>
+	<%= form.label :description %>
+	<br>
+	<%= form.text_field  :description %>
+	<br>
+	<%= form.submit :update%>
+<% end %>

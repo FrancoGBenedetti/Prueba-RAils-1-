@@ -1,0 +1,10 @@
+
+<h1>Crear un nuevo ToDo</h1>
+
+<%= form_with(model: @todo, local: true) do |form| %>
+	
+	<%= form.text_area  :description %>
+	
+	<%= form.submit :crear %>
+
+<% end %>
